@@ -1,16 +1,16 @@
 import './MenuList.css';
-import MenuListItem from '../MenuListItem/MenuListItem';
+import MenuListProduct from '../MenuListProduct/MenuListProduct';
 
-export default function MenuList({ menuItems }) {
-  const items = menuItems.map(item =>
-    <MenuListItem
-      key={item._id}
-      menuItem={item}
+export default function MenuList({ menuProducts }) {
+  const products = menuProducts.map(product =>
+    <MenuListProduct
+      key={product._id}
+      menuProduct={product}
     />
   );
   return (
     <main className="MenuList">
-      {items}
+      {products}
     </main>
   );
 }
