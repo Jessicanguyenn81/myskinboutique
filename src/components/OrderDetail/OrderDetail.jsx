@@ -42,7 +42,7 @@ export default function OrderDetail({ order }) {
             </section>
           </>
           :
-          <div className="hungry">Hungry?</div>
+          <div className="fresh">✨Add To Your Routine!🧖🏼‍♀️🧖🏽‍♀️</div>
         }
       </div>
     </div>

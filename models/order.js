@@ -38,4 +38,14 @@ orderSchema.virtual('orderId').get(function() {
     return this.id.slice(-6).toUpperCase()
 })
 
+orderSchema.statics.getCart = function(userId) {
+    return this.findOneAndUpdate(
+        { user: userId, isPaid: false },
+        //this is the updated version of the cart
+        { user: userId },
+        //this creates the cart for you if it doesn't exist
+        { upsert: true, new: true }
+    );
+}
+
 module.exports = mongoose.model('Order', orderSchema)

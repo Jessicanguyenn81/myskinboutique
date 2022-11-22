@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import * as productsAPI from '../../utilities/products-api';
+import * as ordersAPI from '../../utilities/orders-api';
 import './NewOrderPage.css';
 import { Link } from 'react-router-dom';
 import Logo from '../../components/Logo/Logo';
@@ -11,18 +12,25 @@ import UserLogOut from '../../components/UserLogOut/UserLogOut';
 export default function NewOrderPage({ user, setUser }) {
   const [menuProducts, setMenuProducts] = useState([]);
   const [activeCat, setActiveCat] = useState('');
+  const [cart, setCart] = useState(null);
   const categoriesRef = useRef([]);
 
   useEffect(function() {
     async function getProducts() {
       const products = await productsAPI.getAll();
-      categoriesRef.current = [...new Set(products.map(product => product.category.name))];
+      categoriesRef.current = [...new Set(products.map(product => product.category.name))]
       setMenuProducts(products);
-      setActiveCat(categoriesRef.current[0]);
+      setActiveCat(categoriesRef.current[0])
     }
     getProducts();
+    async function getCart() {
+        const cart = await ordersAPI.getCart()
+        setCart(cart)
+    }
+    getCart();
   }, []);
   
+
   return (
     <main className="NewOrderPage">
       <aside>
@@ -38,7 +46,7 @@ export default function NewOrderPage({ user, setUser }) {
       <MenuList
         menuProducts={menuProducts.filter(product => product.category.name === activeCat)}
       />
-      <OrderDetail />
+      <OrderDetail order={cart}/>
     </main>
   );
 }
