@@ -1,14 +1,15 @@
 .Logo {
-    height: 12vmin;
-    width: 18vmin;
+    height: 15vmin;
+    width: 15vmin;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: #b53c9dbb;
+    background-color: #a42d8cbb;
     color: var(--tan-1);
     font-size: 2.7vmin;
-    border: .6vmin solid #eec54d;
+    border: .6vmin solid #dad1b9;
     font-family: 'Patrick Hand', cursive;
+    color: whitesmoke
   }
