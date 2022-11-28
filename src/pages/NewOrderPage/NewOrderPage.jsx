@@ -32,10 +32,15 @@ export default function NewOrderPage({ user, setUser }) {
 
   /*--- Event Handlers --- */
   async function handleAddToOrder(productId) {
-    const cart = await ordersAPI.addProductToCart(productId)
-    setCart(cart)
+    const updatedCart = await ordersAPI.addProductToCart(productId)
+    setCart(updatedCart)
   }
   
+  async function handleChangeQty(productId, newQty) {
+    const updatedCart = await ordersAPI.setProductQtyInCart(productId, newQty)
+    setCart(updatedCart)
+  }
+
 
   return (
     <main className="NewOrderPage">
@@ -53,7 +58,7 @@ export default function NewOrderPage({ user, setUser }) {
         menuProducts={menuProducts.filter(product => product.category.name === activeCat)}
         handleAddToOrder={handleAddToOrder}
       />
-      <OrderDetail order={cart}/>
+      <OrderDetail order={cart} handleChangeQty={handleChangeQty}/>
     </main>
   );
 }

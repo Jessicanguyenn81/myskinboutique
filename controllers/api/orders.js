@@ -16,12 +16,17 @@ module.exports = {
   
   // Add an product to the cart
   async function addToCart(req, res) {
-    
+    const cart = await Order.getCart(req.user._id)
+    await cart.addProductToCart(req.params.id)
+    res.json(cart)
   }
   
   // Updates an product's qty in the cart
   async function setProductQtyInCart(req, res) {
-  }
+    const cart = await Order.getCart(req.user._id)
+    await cart.setProductQty(req.body.productId, req.body.newQty)
+    res.json(cart)
+  } 
   
   // Update the cart's isPaid property to true
   async function checkout(req, res) {

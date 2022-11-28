@@ -2,7 +2,7 @@ import './OrderDetail.css';
 import LineProduct from '../LineProduct/LineProduct';
 
 // Used to display the details of any order, including the cart (unpaid order)
-export default function OrderDetail({ order }) {
+export default function OrderDetail({ order, handleChangeQty }) {
   if (!order) return null;
 
   const lineProducts = order.lineProducts.map(product =>
@@ -10,6 +10,7 @@ export default function OrderDetail({ order }) {
       lineProduct={product}
       isPaid={order.isPaid}
       key={product._id}
+      handleChangeQty={handleChangeQty}
     />
   );
 

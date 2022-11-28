@@ -48,4 +48,28 @@ orderSchema.statics.getCart = function(userId) {
     );
 }
 
+//Instance Method for adding a product to a a cart
+orderSchema.methods.addProductToCart = async function(productId) {
+    const cart = this;
+    const lineProduct = cart.lineProducts.find(lineProduct => lineProduct.product._id.equals(productId));
+    if (lineProduct) {
+        lineProduct.qty += 1;
+    } else {
+        const product = await mongoose.model('Product').findById(productId);
+        cart.lineProducts.push({ product });
+    }
+    return cart.save();
+}
+
+orderSchema.methods.setProductQty = function(productId, newQty) {
+    const cart = this
+    const lineProduct = cart.lineProducts.find(lineProduct => lineProduct.product._id.equals(productId));
+    if (lineProduct && newQty <= 0) {
+        lineProduct.remove();
+    } else if (lineProduct) {
+        lineProduct.qty = newQty
+    }
+    return cart.save() 
+}
+
 module.exports = mongoose.model('Order', orderSchema)

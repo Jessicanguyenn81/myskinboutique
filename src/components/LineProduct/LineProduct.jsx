@@ -1,6 +1,6 @@
 import './LineProduct.css';
 
-export default function LineProduct({ lineProduct, isPaid }) {
+export default function LineProduct({ lineProduct, isPaid, handleChangeQty }) {
   return (
     <div className="LineProduct">
       <div className="flex-ctr-ctr">{lineProduct.product.emoji}</div>
@@ -12,14 +12,14 @@ export default function LineProduct({ lineProduct, isPaid }) {
         {!isPaid &&
           <button
             className="btn-xs"
-            onClick={() => alert('clicked')}
-          >−</button>
+            onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty - 1)}
+          >-</button>
         }
         <span>{lineProduct.qty}</span>
         {!isPaid &&
           <button
             className="btn-xs"
-            onClick={() => alert('clicked')}
+            onClick={() => handleChangeQty(lineProduct.product._id, lineProduct.qty + 1)}
           >+</button>
         }
       </div>
