@@ -1,0 +1,23 @@
+.OrderListProduct {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3vmin;
+    padding: 2vmin;
+    color: var(--text-light);
+    background-color: var(--white);
+    border: 0.2vmin solid var(--tan-3);
+    border-radius: 1vmin;
+    font-size: 2vmin;
+    cursor: pointer;
+  }
+  
+  .OrderListProduct.selected, .OrderListProduct:not(.selected):hover {
+    border-color: var(--orange);
+    border-width: 0.2vmin;
+  }
+  
+  .OrderListProduct.selected {
+    cursor: default;
+  }
