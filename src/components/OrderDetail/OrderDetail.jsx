@@ -35,7 +35,7 @@ export default function OrderDetail({ order }) {
                   className="btn-sm"
                   onClick={() => alert('clicked')}
                   disabled={!lineProducts.length}
-                >CHECKOUT</button>
+                >PLACE ORDER</button>
               }
               <span>{order.totalQty}</span>
               <span className="right">${order.orderTotal.toFixed(2)}</span>

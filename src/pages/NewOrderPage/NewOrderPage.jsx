@@ -29,6 +29,12 @@ export default function NewOrderPage({ user, setUser }) {
     }
     getCart();
   }, []);
+
+  /*--- Event Handlers --- */
+  async function handleAddToOrder(productId) {
+    const cart = await ordersAPI.addProductToCart(productId)
+    setCart(cart)
+  }
   
 
   return (
@@ -45,6 +51,7 @@ export default function NewOrderPage({ user, setUser }) {
       </aside>
       <MenuList
         menuProducts={menuProducts.filter(product => product.category.name === activeCat)}
+        handleAddToOrder={handleAddToOrder}
       />
       <OrderDetail order={cart}/>
     </main>

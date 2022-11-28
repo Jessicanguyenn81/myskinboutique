@@ -16,7 +16,7 @@ module.exports = {
   
   // Add an product to the cart
   async function addToCart(req, res) {
-  
+    
   }
   
   // Updates an product's qty in the cart
