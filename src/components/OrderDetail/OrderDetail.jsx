@@ -2,7 +2,7 @@ import './OrderDetail.css';
 import LineProduct from '../LineProduct/LineProduct';
 
 // Used to display the details of any order, including the cart (unpaid order)
-export default function OrderDetail({ order, handleChangeQty }) {
+export default function OrderDetail({ order, handleChangeQty, handleCheckout }) {
   if (!order) return null;
 
   const lineProducts = order.lineProducts.map(product =>
@@ -34,7 +34,7 @@ export default function OrderDetail({ order, handleChangeQty }) {
                 :
                 <button
                   className="btn-sm"
-                  onClick={() => alert('clicked')}
+                  onClick={handleCheckout}
                   disabled={!lineProducts.length}
                 >PLACE ORDER</button>
               }

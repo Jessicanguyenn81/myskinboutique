@@ -18,3 +18,6 @@ export function checkout() {
   return sendRequest(`${BASE_URL}/cart/checkout`, 'POST');
 }
 
+export function getAllForUser() {
+  return sendRequest(`${BASE_URL}/user`);
+}
