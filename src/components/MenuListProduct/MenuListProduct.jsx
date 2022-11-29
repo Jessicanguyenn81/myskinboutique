@@ -5,7 +5,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
-
 const style = {
   position: 'absolute',
   top: '50%',
@@ -23,11 +22,11 @@ export default function MenuListProduct({ menuProduct, handleAddToOrder }) {
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
 
-
   return (
     <div className="MenuListProduct">
       <div className="emoji flex-ctr-ctr">{menuProduct.emoji}</div>
       <div className="name">{menuProduct.name}</div>
+      {/* <div className='details'>{menuProduct.details}</div> */}
       <div className="buy">
         <span>${menuProduct.price.toFixed(2)}</span>
         <button className="btn-sm" onClick={() => handleAddToOrder(menuProduct._id)}>
@@ -45,11 +44,10 @@ export default function MenuListProduct({ menuProduct, handleAddToOrder }) {
               {menuProduct.name}
             </Typography>
             <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              {menuProduct.details} 
+              {menuProduct.details}
             </Typography>
           </Box>
         </Modal>
-
       </div>
     </div>
   );

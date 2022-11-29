@@ -49,6 +49,9 @@ export default function NewOrderPage({ user, setUser }) {
 
   return (
     <main className="NewOrderPage">
+      {/* <div class='topnav'>
+        <input type='text' placeholder='Search..'></input>
+      </div> */}
       <aside>
         <Logo />
         <CategoryList
