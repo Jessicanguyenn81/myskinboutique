@@ -1,3 +1,5 @@
-# MERN-Stack Infrastructure
+# My Skin Boutique
 
-Clone this repo to provide the starter code for a comprehensive MERN-Stack project including token-based authentication.
+# Description 
+
+Hey guys ready for that flawless skin, well myskin Boutique can help you formulate your routine and you can purchase your products in **ONE click**
