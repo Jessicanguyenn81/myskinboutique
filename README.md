@@ -4,8 +4,8 @@
 
 Hey guys ready for that flawless skin, well myskin Boutique can help you formulate your routine and you can purchase your products in **ONE click**
 
-# Getting Started
-
+# Home Page
+![Screenshot 2022-12-01 at 1 26 00 PM](https://user-images.githubusercontent.com/111536026/205162456-c799d79b-86bc-452d-8c02-1b9aea83e32d.png)
 
 
 # Technologies Used
