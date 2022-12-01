@@ -14,6 +14,10 @@ export default function AuthPage({ setUser }) {
         <h3 onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'SIGN UP' : 'LOG IN'}</h3>
       </div>
       {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} />}
+      <div className='image'>
+        <h2>hi</h2>
+        <img src='https://imgur.com/WUm3BtV' alt='skincare'></img>
+      </div>
     </main>
   );
 }
