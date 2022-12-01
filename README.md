@@ -9,7 +9,8 @@ Hey guys ready for that flawless skin, well myskin Boutique can help you formula
 
 
 # Technologies Used
-- Javascript, 
+- Javascript
+- React
 - HTML
 - CSS
 - MUI
