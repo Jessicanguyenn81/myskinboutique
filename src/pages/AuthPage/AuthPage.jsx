@@ -15,8 +15,7 @@ export default function AuthPage({ setUser }) {
       </div>
       {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} />}
       <div className='image'>
-        <h2>hi</h2>
-        <img src='https://imgur.com/WUm3BtV' alt='skincare'></img>
+        <img src='/Skincare.jpeg' alt='skincare'/>
       </div>
     </main>
   );
